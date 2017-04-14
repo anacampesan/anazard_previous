@@ -3,12 +3,13 @@
   .container-fluid {
     margin-right: 10%;
     margin-left: 10%; } }
-.jumbotron {
+.landing {
   background: url("../assets/background.png") no-repeat fixed;
   height: 100vh;
   background-size: cover; }
 
 .landing-title {
+  z-index: 9999 !important;
   overflow-x: hidden;
   padding-top: 40px;
   font-family: 'Press Start 2P', cursive; }
@@ -49,3 +50,23 @@
 
 .placeholder {
   height: 300px; }
+
+.navbar {
+  background: rgba(255, 255, 255, 0.5);
+  border-bottom: 1px solid #717171; }
+
+.posts-header {
+  padding-top: 120px;
+  background-attachment: fixed;
+  color: white;
+  min-height: 40vh;
+  background-image: url("../assets/posts/default.jpg");
+  background-size: cover;
+  font-family: 'Press Start 2P', cursive;
+  text-align: center; }
+
+.posts-body {
+  text-align: justify; }
+
+.row {
+  margin-bottom: 30px; }
