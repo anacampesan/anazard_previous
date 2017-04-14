@@ -4,11 +4,12 @@
     margin-right: 10%;
     margin-left: 10%; } }
 .landing {
-  background: url("../assets/background.png") no-repeat fixed;
+  background: url("../assets/bg.jpg") no-repeat fixed;
   height: 100vh;
   background-size: cover; }
 
 .landing-title {
+  color: white;
   z-index: 9999 !important;
   overflow-x: hidden;
   padding-top: 40px;
@@ -52,8 +53,7 @@
   height: 300px; }
 
 .navbar {
-  background: rgba(255, 255, 255, 0.5);
-  border-bottom: 1px solid #717171; }
+  background: rgba(255, 255, 255, 0.4); }
 
 .posts-header {
   padding-top: 120px;
