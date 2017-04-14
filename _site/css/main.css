@@ -1,0 +1,51 @@
+@import url("https://fonts.googleapis.com/css?family=Press+Start+2P");
+@media (min-width: 768px) {
+  .container-fluid {
+    margin-right: 10%;
+    margin-left: 10%; } }
+.jumbotron {
+  background: url("../assets/background.png") no-repeat fixed;
+  height: 100vh;
+  background-size: cover; }
+
+.landing-title {
+  overflow-x: hidden;
+  padding-top: 40px;
+  font-family: 'Press Start 2P', cursive; }
+  .landing-title h1 {
+    word-wrap: break-word;
+    -webkit-hyphens: auto;
+    -moz-hyphens: auto;
+    -ms-hyphens: auto;
+    -o-hyphens: auto;
+    hyphens: auto;
+    color: #5896ff; }
+    .landing-title h1 small {
+      color: black; }
+
+.landing-container {
+  width: 100%;
+  display: flex;
+  display: -webkit-flex;
+  justify-content: center;
+  align-items: center;
+  -webkit-justify-content: center;
+  -webkit-align-items: center;
+  display: -webkit-flex; }
+
+.landing-platform {
+  left: 0px;
+  background: url("../assets/block.png") repeat-x;
+  height: 90px;
+  bottom: 0px;
+  position: absolute;
+  width: 100%; }
+
+.landing-ana {
+  text-align: center !important;
+  margin: 0 auto;
+  bottom: 90px;
+  position: absolute; }
+
+.placeholder {
+  height: 300px; }
