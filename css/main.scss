@@ -11,7 +11,7 @@
 }
 
 .landing {
-  background-image: url('../assets/vaporwave.gif'), url('../assets/bg.jpg');
+  background-image: url('../assets/vaporwave.gif'), url('../assets/background/13.gif');
   background-repeat: no-repeat;
   background-attachment: fixed;
   height: 100vh;
@@ -83,7 +83,7 @@
   background-attachment: fixed;
   color: white;
   min-height: 40vh;
-  background-image: url('../assets/posts/default.jpg');
+  background-image: url('../assets/vaporwave.gif'), url('../assets/posts/default.jpg');
   background-size: cover;
   font-family: 'Press Start 2P', cursive;
   text-align: center;
