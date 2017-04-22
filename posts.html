@@ -16,20 +16,12 @@ layout: base
             <h3 class="card-header">Recently added</h3>
           {% endif %}
           <div class="card-block">
-            <h4 class="card-title">{{ post.title }} <small>:: {{ post.date | date: "%B %e, %Y" }}</small></h4>
+            <h4 class="card-title">{{ post.title }} <small><span class="badge badge-default">{{ post.category }}</span></small></h4>
+            <h5><small>{{ post.date | date: "%B %e, %Y" }}</small></h5>
             <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
           </div>
         </div>
       </div>
     </div>
   {% endfor %}
-</div>
-
-<div class="container-fluid">
-  <div class="row">
-    <div class="col-md-12">
-      <h3><a href="{{ post.url }}">{{ post.title }}</a></h3>
-      <p><small><strong>{{ post.date | date: "%B %e, %Y" }}</strong> . {{ post.category }} . <a href="http://anazard.github.com{{ post.url }}#disqus_thread"></a></small></p>
-    </div>
-  </div>
 </div>

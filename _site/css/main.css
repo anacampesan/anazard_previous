@@ -3,6 +3,9 @@
   .container-fluid {
     margin-right: 10%;
     margin-left: 10%; } }
+h1 {
+  text-shadow: 2px 2px 6px black; }
+
 .landing {
   background-image: url("../assets/vaporwave.gif"), url("../assets/posts/default.jpg");
   background-repeat: no-repeat;
@@ -16,7 +19,8 @@
   z-index: 9999 !important;
   overflow-x: hidden;
   padding-top: 40px;
-  font-family: 'Press Start 2P', cursive; }
+  font-family: 'Press Start 2P', cursive;
+  text-shadow: 2px 2px 6px black; }
   .landing-title h1 {
     word-wrap: break-word;
     -webkit-hyphens: auto;
@@ -39,6 +43,7 @@
   display: -webkit-flex; }
 
 .landing-platform {
+  border-top: 1px solid black;
   left: 0px;
   background: url("../assets/background/pink.png") repeat-x;
   height: 90px;
