@@ -1,7 +1,4 @@
 @import url("https://fonts.googleapis.com/css?family=Press+Start+2P");
-@media only screen and (min-width: 480px) {
-  .landing {
-    margin-top: -60px; } }
 @media (min-width: 768px) {
   .container-fluid {
     margin-right: 10%;
