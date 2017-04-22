@@ -4,11 +4,12 @@
     margin-right: 10%;
     margin-left: 10%; } }
 .landing {
-  background-image: url("../assets/vaporwave.gif"), url("../assets/background/13.gif");
+  background-image: url("../assets/vaporwave.gif"), url("../assets/posts/default.jpg");
   background-repeat: no-repeat;
   background-attachment: fixed;
   height: 100vh;
-  background-size: cover; }
+  background-size: cover;
+  max-height: 100vh; }
 
 .landing-title {
   color: white;
@@ -39,7 +40,7 @@
 
 .landing-platform {
   left: 0px;
-  background: url("../assets/block.png") repeat-x;
+  background: url("../assets/background/pink.png") repeat-x;
   height: 90px;
   bottom: 0px;
   position: absolute;
@@ -55,14 +56,18 @@
   height: 300px; }
 
 .navbar {
-  background: rgba(255, 255, 255, 0.4); }
+  width: 100%;
+  background: rgba(255, 255, 255, 0); }
+
+.nav-link, .navbar-brand {
+  color: white !important; }
 
 .posts-header {
   padding-top: 120px;
   background-attachment: fixed;
   color: white;
   min-height: 40vh;
-  background-image: url("../assets/vaporwave.gif"), url("../assets/posts/default.jpg");
+  background-image: url("../assets/posts/default.jpg");
   background-size: cover;
   font-family: 'Press Start 2P', cursive;
   text-align: center; }
