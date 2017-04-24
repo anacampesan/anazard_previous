@@ -64,10 +64,16 @@ h1 {
   padding-right: 10%;
   padding-left: 10%;
   width: 100%;
-  background: rgba(255, 255, 255, 0); }
+  background: rgba(255, 255, 255, 0);
+  transition: background-color 0.7s; }
 
 .nav-link, .navbar-brand {
   color: white !important; }
+
+.navbar-scroll {
+  color: black;
+  background: rgba(255, 255, 255, 0.5);
+  transition: background-color 0.7s, color 0.7s; }
 
 .posts-header {
   padding-top: 120px;
