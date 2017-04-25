@@ -1,4 +1,8 @@
 @import url("https://fonts.googleapis.com/css?family=Press+Start+2P");
+@media (max-width: 767px) {
+  .landing-platform, .landing-ana {
+    display: none;
+    visibility: hidden; } }
 @media (min-width: 768px) {
   .container-fluid {
     margin-right: 10%;
