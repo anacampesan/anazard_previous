@@ -29,9 +29,9 @@ layout: base
 
   <div class="row">
     {% for post in site.posts limit:4 %}
-      <div class="col-md-3">
+      <div class="col-md-3" style="width: 30rem;">
         <div class="card">
-          <img class="img-thumbnail" src="assets/posts/{{forloop.index}}.jpg" alt="Card image cap">
+          <img class="card-img-top img-fluid" src="assets/posts/{{forloop.index}}.jpg" alt="Card image cap">
           <div class="card-block">
             <h4 class="card-title">{{post.title}}</h4>
             <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
