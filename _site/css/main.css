@@ -8,7 +8,7 @@
     margin-right: 10%;
     margin-left: 10%; } }
 h1 {
-  text-shadow: 2px 2px 6px black; }
+  text-shadow: 5px 5px 7px black; }
 
 .landing {
   background-image: url("../assets/vaporwave.gif"), url("../assets/posts/default.jpg");
@@ -24,7 +24,7 @@ h1 {
   overflow-x: hidden;
   padding-top: 40px;
   font-family: 'Press Start 2P', cursive;
-  text-shadow: 2px 2px 6px black; }
+  text-shadow: 5px 5px 5px black; }
   .landing-title h1 {
     word-wrap: break-word;
     -webkit-hyphens: auto;
@@ -92,25 +92,19 @@ h1 {
 .posts-body {
   text-align: justify; }
 
-.row {
+.btn-categories {
   margin-bottom: 30px; }
 
 .btn-outline-primary {
   width: 100%; }
 
-@media all and (device-width: 768px) and (device-height: 1024px) and (orientation: portrait) {
-  .landing {
-    height: 1024px; } }
-/**
- * iPad with landscape orientation.
- */
-@media all and (device-width: 768px) and (device-height: 1024px) and (orientation: landscape) {
-  .landing {
-    height: 768px; } }
-/**
- * iPhone 5
- * You can also target devices with aspect ratio.
- */
-@media screen and (device-aspect-ratio: 40 / 71) {
-  .landing {
-    height: 500px; } }
+.card {
+  border: none; }
+
+.img-fluid:hover {
+  filter: drop-shadow(7px 7px 6px #000) opacity(0.7);
+  transition: filter 0.1s; }
+
+.img-fluid {
+  filter: hue-rotate(0deg) drop-shadow(6px 6px 2px #000) opacity(0.7);
+  transition: filter 0.1s; }

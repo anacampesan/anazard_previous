@@ -8,18 +8,18 @@ layout: base
 </div>
 
 <div class="container-fluid">
-  <div class="row">
+  <div class="row btn-categories">
     <div class="col-md-3">
-      <button type="button" class="btn btn-outline-primary btn-lg">Secondary</button>
+      <button type="button" class="btn btn-outline-primary btn-lg">Technology</button>
     </div>
     <div class="col-md-3">
-      <button type="button" class="btn btn-outline-primary btn-lg">Secondary</button>
+      <button type="button" class="btn btn-outline-primary btn-lg">Music</button>
     </div>
     <div class="col-md-3">
-      <button type="button" class="btn btn-outline-primary btn-lg">Secondary</button>
+      <button type="button" class="btn btn-outline-primary btn-lg">Traveling</button>
     </div>
     <div class="col-md-3">
-      <button type="button" class="btn btn-outline-primary btn-lg">Secondary</button>
+      <button type="button" class="btn btn-outline-primary btn-lg">Others</button>
     </div>
   </div>
 
@@ -27,13 +27,20 @@ layout: base
     <div class="row">
       <div class="col-md-12">
         <div class="card">
-          {% if forloop.first %}
+          <!-- {% if forloop.first %}
             <h3 class="card-header">Recently added</h3>
-          {% endif %}
+          {% endif %} -->
           <div class="card-block">
-            <h4 class="card-title">{{ post.title }} <small><span class="badge badge-default">{{ post.category }}</span></small></h4>
-            <h5><small>{{ post.date | date: "%B %e, %Y" }}</small></h5>
-            <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+            <div class="row">
+              <div class="col-md-3">
+                <img src="./assets/posts/{{post.img[0]}}" class="img-fluid">
+              </div>
+              <div class="col-md-9">
+                <h4 class="card-title">{{ post.title }} <small><span class="badge badge-default">{{ post.category }}</span></small></h4>
+                <h5><small>{{ post.date | date: "%B %e, %Y" }}</small></h5>
+                <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+              </div>
+            </div>
           </div>
         </div>
       </div>
