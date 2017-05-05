@@ -1,8 +1,11 @@
 @import url("https://fonts.googleapis.com/css?family=Press+Start+2P");
 @media (max-width: 480px) {
-  .landing-platform, .landing-ana {
+  .landing-platform {
     display: none;
-    visibility: hidden; } }
+    visibility: hidden; }
+
+  .landing-ana {
+    text-align: center; } }
 @media (min-width: 768px) {
   .container-fluid {
     margin-right: 10%;
