@@ -79,8 +79,9 @@ h1 {
 
 .navbar-scroll {
   color: black;
-  background: rgba(255, 255, 255, 0.5);
-  transition: background-color 0.7s, color 0.7s; }
+  background: rgba(0, 0, 0, 0.5);
+  transition: background-color 0.7s, color 0.7s;
+  border-bottom: 1px solid #000; }
 
 .posts-header {
   padding-top: 120px;
