@@ -157,3 +157,17 @@ h1 {
 .about {
   text-align: justify;
 }
+
+.playlist {
+  padding-top: 120px;
+  background-attachment: fixed;
+  color: white;
+  min-height: 30vh;
+  background-image: url('../assets/posts/default.jpg');
+  background-size: cover;
+  font-family: 'Press Start 2P', cursive;
+  text-align: center;
+  h1 {
+
+  }
+}
