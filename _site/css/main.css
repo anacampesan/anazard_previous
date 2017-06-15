@@ -5,7 +5,10 @@
     visibility: hidden; }
 
   .landing-ana {
-    text-align: center; } }
+    text-align: center; }
+
+  .post-list-img {
+    margin-bottom: 20px; } }
 @media (min-width: 768px) {
   .container-fluid {
     margin-right: 10%;
