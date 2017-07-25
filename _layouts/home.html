@@ -6,7 +6,7 @@ layout: base
   <div class="row landing-title text-center">
     <div class="col-md-12">
       <h5>welcome to</h5>
-      <h1>anazard.me</h1>
+      <h1 class="top-bar">anazard.me</h1>
     </div>
   </div>
   <div class="landing-container">
@@ -33,9 +33,13 @@ layout: base
         <div class="card">
           <img class="card-img-top img-fluid" src="assets/posts/{{forloop.index}}.jpg" alt="Card image cap">
           <div class="card-block">
-            <h4 class="card-title">{{post.title}}</h4>
+            <h4 class="card-title">
+              <a href="{{ post.url }}">
+                {{ post.title }}
+              </a>
+            </h4>
             <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-            <a href="#" class="btn btn-primary">Go somewhere</a>
+            <a href="{{ post.url }}" class="btn btn-primary">Go somewhere</a>
           </div>
         </div>
       </div>

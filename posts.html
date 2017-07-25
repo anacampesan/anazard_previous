@@ -4,7 +4,7 @@ layout: base
 
 
 <div class="jumbotron posts-header">
-  <h1>All posts</h1>
+  <h1 class="top-bar">All posts</h1>
 </div>
 
 <div class="container-fluid">
@@ -36,9 +36,17 @@ layout: base
                 <img src="./assets/posts/{{post.img[0]}}" class="img-fluid">
               </div>
               <div class="col-md-9">
-                <h4 class="card-title">{{ post.title }} <small><span class="badge badge-default">{{ post.category }}</span></small></h4>
-                <h5><small>{{ post.date | date: "%B %e, %Y" }}</small></h5>
-                <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                <!-- <a href="{{ post.url }}"> -->
+                  <h4 class="card-title">{{ post.title }}</h4>
+
+                  <h5><small>{{ post.date | date: "%B %e, %Y" }}</small></h5>
+
+                  {% for tag in post.tags %}
+                    <span class="badge badge-default">{{ tag }}</span>
+                  {% endfor %}
+
+                  <p class="card-text">{{ post.excerpt }}</p>
+                <!-- </a> -->
               </div>
             </div>
           </div>
