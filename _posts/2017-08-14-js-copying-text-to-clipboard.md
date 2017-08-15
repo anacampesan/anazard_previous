@@ -5,7 +5,7 @@ tags: [programming, javascript, front-end, technology]
 img: ['4.jpg']
 ---
 
-I was looking for ways to copy a given link to the clipboard upon clicking a button. JS has the document.execCommand(‘copy’) for some operations of the same nature. Turns out this method only allows you to copy text that is currently selected, and you can only select text that’s in a text input / textarea.
+I was looking into ways to copy a given link to the clipboard upon clicking a button. JS has **document.execCommand(‘copy’)** for some operations of the same nature. Turns out this method only allows you to copy text that is currently selected, and you can only select text that’s in either a text input or textarea.
 
 The solution I came up with consists in creating a temporary input in which we could enter the text, execute the copy command and get rid of it right after.
 
