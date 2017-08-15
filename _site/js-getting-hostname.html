@@ -5,7 +5,7 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title> Third Post |  anazard.me</title>
+<title> Getting the hostname of a url in Javascript |  anazard.me</title>
 
 <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
@@ -13,7 +13,7 @@
 
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-<link rel="stylesheet" href="css/main.css">
+<link rel="stylesheet" href="css/custom.css">
 <link rel="shortcut icon" type="image/png" href="assets/icon.png">
 
   </head>
@@ -57,14 +57,17 @@
 </nav>
 
     <div class="jumbotron posts-header">
-      <h1 class="top-bar">Third Post</h1>
+      <h1 class="top-bar">Getting the hostname of a url in Javascript</h1>
     </div>
 
     <div class="container-fluid posts-body">
       <div class="row">
         <div class="col-sm-12 panel">
-          <h2>Third Post</h2>
-          <strong>August 22, 2015</strong>
+          <h2>Getting the hostname of a url in Javascript</h2>
+          <strong>
+            August 14, 2017 -
+            <a href="./about">@anazard</a>
+          </strong>
         </div>
       </div>
 
@@ -76,13 +79,24 @@
 
       <div class="row">
         <div class="col-sm-12 panel">
-          <p>Qui enim nulla anim sit esse aliquip pariatur commodo reprehenderit reprehenderit occaecat nulla dolor veniam fugiat ad. Eu consectetur pariatur dolore pariatur ex fugiat culpa exercitation enim nulla aute ad. Nostrud adipisicing esse incididunt minim excepteur excepteur esse.</p>
+          <p>I was looking for ways of getting the hostname part of a given url. For my surprise, JS had a built-in feature to do that, as long as the link is within a <strong>&lt; a &gt;</strong> tag. So we have to create a temporary tag to hold the link, extract the hostname and get rid of it when we’re done.</p>
 
-<p>Proident sunt eu fugiat amet dolore nostrud aute ad cupidatat veniam nostrud cillum ea occaecat. Amet aute non aliquip excepteur velit minim Lorem aute nostrud est irure officia nostrud minim. Consequat mollit veniam deserunt eiusmod sint deserunt consequat amet reprehenderit sint proident voluptate cillum aute commodo ullamco qui. Tempor do reprehenderit laborum quis elit culpa proident dolore adipisicing incididunt cupidatat reprehenderit exercitation. Sunt culpa voluptate nisi excepteur sit culpa dolor sint adipisicing tempor laborum consectetur. Ex sunt officia eiusmod eu eiusmod mollit magna quis anim ex ipsum ad. Anim Lorem tempor deserunt do consequat nisi nulla officia officia consectetur officia est labore adipisicing incididunt.</p>
+<div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="c1">// JS function</span>
 
-<p>Minim ad commodo ex veniam officia in in esse amet. Enim reprehenderit ea nulla in do elit non elit cupidatat nulla voluptate enim excepteur cillum ad. Non voluptate nisi nulla pariatur enim laboris consequat esse consequat in in elit adipisicing sunt.</p>
+<span class="nx">$</span><span class="p">(</span><span class="nb">document</span><span class="p">).</span><span class="nx">ready</span><span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+  <span class="nx">$linkField</span> <span class="o">=</span> <span class="nx">$</span><span class="p">(</span><span class="s1">'[name="form-link"]'</span><span class="p">);</span>
+  <span class="nx">$sourceField</span> <span class="o">=</span> <span class="nx">$</span><span class="p">(</span><span class="s1">'[name="form-source"]'</span><span class="p">);</span>
+  <span class="nx">$linkField</span><span class="p">.</span><span class="nx">keypress</span><span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+    <span class="nx">$tempA</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">createElement</span><span class="p">(</span><span class="s1">'a'</span><span class="p">);</span>
+    <span class="nx">$tempA</span><span class="p">.</span><span class="nx">href</span> <span class="o">=</span> <span class="nx">$linkField</span><span class="p">.</span><span class="nx">val</span><span class="p">();</span>
+    <span class="nx">$sourceField</span><span class="p">.</span><span class="nx">val</span><span class="p">(</span><span class="nx">$tempA</span><span class="p">.</span><span class="nx">hostname</span><span class="p">);</span>
+    <span class="nx">$tempA</span><span class="p">.</span><span class="nx">remove</span><span class="p">();</span>
+  <span class="p">});</span>
+<span class="p">});</span>
+</code></pre>
+</div>
 
-<p>Minim eiusmod ullamco anim velit do cupidatat eu culpa consectetur laboris aute. Commodo minim consectetur et magna aute nisi reprehenderit aliqua labore nulla sint. Ex quis deserunt commodo do nulla minim aliqua incididunt laborum deserunt mollit anim ullamco. Elit magna tempor mollit ex esse anim velit adipisicing eiusmod nisi quis esse eu proident cillum exercitation cillum. Adipisicing do aliqua ipsum exercitation veniam sit deserunt nulla elit consequat ipsum veniam anim ut sit sit. Proident culpa culpa laborum ea eiusmod cupidatat anim sit dolor sunt id laboris sunt qui incididunt magna esse. Dolor ipsum est qui Lorem anim mollit sunt aliqua eu ea dolor anim.</p>
+<p><a href="https://gist.github.com/anazard/b3e70a21d58d7d48b04891fa5a4360f4">This snippet on Github Gist</a></p>
 
         </div>
       </div>
@@ -98,9 +112,13 @@
           <h5>
             Tags:
             
-            <span class="badge badge-default">blog</span>
+            <span class="badge badge-default">programming</span>
             
-            <span class="badge badge-default">first</span>
+            <span class="badge badge-default">javascript</span>
+            
+            <span class="badge badge-default">front-end</span>
+            
+            <span class="badge badge-default">technology</span>
             
           </h5>
         </div>

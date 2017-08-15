@@ -9,14 +9,14 @@ I started this very specific blog project a while ago, as you can see by my Gith
 
 Noticed that I didn't mention any server side language until now, as I was introduced to it in my first year at university. Up to that point of my life, dynamic web pages were a complete land of unknownness for me. I then fired up the server and had the workflow of my application being changed according to the state of some variables. **That was pure magic!** Technology had become limitless.
 
-{% highlight php %}
+```php
 <?php
-  $name = 'Ana';
+$name = 'Ana';
 ?>
 
-<h1>Welcome, <?php>echo $name;?></h1>
+<h1>Welcome, <?php echo $name; ?>!</h1>
 <!-- Yeah, this was magic for the not so little 18-year-old @anazard -->
-{% endhighlight %}
+```
 
 Elit Lorem sit labore sit quis consequat duis dolor Lorem adipisicing aute aute dolor sit quis. Proident adipisicing quis fugiat qui Lorem ut esse. Fugiat et eiusmod ipsum sunt dolor Lorem eiusmod ea aliquip consequat.
 

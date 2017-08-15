@@ -2,6 +2,7 @@
 ---
 
 @import url('https://fonts.googleapis.com/css?family=Press+Start+2P');
+@import 'monokai';
 
 @media(max-width:480px) {
   .landing-platform {
@@ -32,6 +33,7 @@
 }
 
 .landing {
+  border-radius: 0px;
   background-image: url('../assets/vaporwave.gif'), url('../assets/posts/default.jpg');
   background-repeat: no-repeat;
   background-attachment: fixed;

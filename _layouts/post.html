@@ -13,7 +13,10 @@
       <div class="row">
         <div class="col-sm-12 panel">
           <h2>{{page.title}}</h2>
-          <strong>{{ page.date | date: "%B %e, %Y" }}</strong>
+          <strong>
+            {{ page.date | date: "%B %e, %Y" }} -
+            <a href="./about">{% if page.author %} {{page.author}}{% else %}@anazard{% endif %}</a>
+          </strong>
         </div>
       </div>
 

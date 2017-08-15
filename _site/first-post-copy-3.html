@@ -13,7 +13,7 @@
 
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-<link rel="stylesheet" href="css/main.css">
+<link rel="stylesheet" href="css/custom.css">
 <link rel="shortcut icon" type="image/png" href="assets/icon.png">
 
   </head>
@@ -64,7 +64,10 @@
       <div class="row">
         <div class="col-sm-12 panel">
           <h2>Second Post</h2>
-          <strong>August 22, 2015</strong>
+          <strong>
+            August 22, 2015 -
+            <a href="./about">@anazard</a>
+          </strong>
         </div>
       </div>
 
@@ -80,12 +83,14 @@
 
 <p>Noticed that I didn’t mention any server side language until now, as I was introduced to it in my first year at university. Up to that point of my life, dynamic web pages were a complete land of unknownness for me. I then fired up the server and had the workflow of my application being changed according to the state of some variables. <strong>That was pure magic!</strong> Technology had become limitless.</p>
 
-<figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="cp">&lt;?php</span>
-  <span class="nv">$name</span> <span class="o">=</span> <span class="s1">'Ana'</span><span class="p">;</span>
+<div class="language-php highlighter-rouge"><pre class="highlight"><code><span class="cp">&lt;?php</span>
+<span class="nv">$name</span> <span class="o">=</span> <span class="s1">'Ana'</span><span class="p">;</span>
 <span class="cp">?&gt;</span>
 
-<span class="nt">&lt;h1&gt;</span>Welcome, <span class="cp">&lt;?php</span><span class="o">&gt;</span><span class="k">echo</span> <span class="nv">$name</span><span class="p">;</span><span class="cp">?&gt;</span><span class="nt">&lt;/h1&gt;</span>
-<span class="c">&lt;!-- Yeah, this was magic for the not so little 18-year-old @anazard --&gt;</span></code></pre></figure>
+<span class="nt">&lt;h1&gt;</span>Welcome, <span class="cp">&lt;?php</span> <span class="k">echo</span> <span class="nv">$name</span><span class="p">;</span> <span class="cp">?&gt;</span>!<span class="nt">&lt;/h1&gt;</span>
+<span class="c">&lt;!-- Yeah, this was magic for the not so little 18-year-old @anazard --&gt;</span>
+</code></pre>
+</div>
 
 <p>Elit Lorem sit labore sit quis consequat duis dolor Lorem adipisicing aute aute dolor sit quis. Proident adipisicing quis fugiat qui Lorem ut esse. Fugiat et eiusmod ipsum sunt dolor Lorem eiusmod ea aliquip consequat.</p>
 

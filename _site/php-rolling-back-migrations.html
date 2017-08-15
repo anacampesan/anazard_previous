@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title> Rolling back migrations in PHP and Laravel |  anazard.me</title>
+
+<script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+<script src="scripts/app.js"></script>
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="css/custom.css">
+<link rel="shortcut icon" type="image/png" href="assets/icon.png">
+
+  </head>
+  <body>
+    <nav class="navbar navbar-toggleable-md navbar-light bg-faded fixed-top" id="navbar">
+  <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <!-- <a class="navbar-brand" href=".">
+    <img src="../assets/logo.png" width="30" height="30" alt="">
+    <i class="fa fa-bolt" aria-hidden="true"></i>
+  </a> -->
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item">
+        <a class="nav-link" href="/">
+          <i class="fa fa-home" aria-hidden="true"></i> Home
+        </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/posts">
+          <i class="fa fa-pencil" aria-hidden="true"></i> Posts
+        </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link disabled" href="#">
+          <i class="fa fa-briefcase" aria-hidden="true"></i> Workshops
+        </a>
+      </li>
+    </ul>
+    <ul class="navbar-nav navbar-left">
+      <li class="nav-item">
+        <a class="nav-link" href="/about">
+          <i class="fa fa-vcard-o" aria-hidden="true"></i> About
+        </a>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+    <div class="jumbotron posts-header">
+      <h1 class="top-bar">Rolling back migrations in PHP and Laravel</h1>
+    </div>
+
+    <div class="container-fluid posts-body">
+      <div class="row">
+        <div class="col-sm-12 panel">
+          <h2>Rolling back migrations in PHP and Laravel</h2>
+          <strong>
+            August 14, 2017 -
+            <a href="./about">@anazard</a>
+          </strong>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-md-12">
+          <hr>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-sm-12 panel">
+          <p>Migrations have the role of tracking all changes we need to make in our databases since the moment of its creation. It’s pretty much described by Laravel as a version control.</p>
+
+<p><strong>php artisan make:migration</strong></p>
+
+<p>This will create a new migration file. Essentially, it contains two functions: up and down. Up is the actual change you’d like to make, while down is supposed to have the backwards operation you’d use to rollback to previous state.</p>
+
+<div class="language-php highlighter-rouge"><pre class="highlight"><code><span class="cp">&lt;?php</span>
+<span class="k">use</span> <span class="nx">Illuminate\Database\Schema\Blueprint</span><span class="p">;</span>
+<span class="k">use</span> <span class="nx">Illuminate\Database\Migrations\Migration</span><span class="p">;</span>
+<span class="k">class</span> <span class="nc">AddConstraintMyTable</span> <span class="k">extends</span> <span class="nx">Migration</span>
+<span class="p">{</span>
+    <span class="sd">/**
+     * Run the migrations.
+     *
+     * @return void
+     */</span>
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">up</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="nx">Schema</span><span class="o">::</span><span class="na">table</span><span class="p">(</span><span class="s1">'myTable'</span><span class="p">,</span> <span class="k">function</span> <span class="p">(</span><span class="nx">Blueprint</span> <span class="nv">$table</span><span class="p">)</span> <span class="p">{</span>
+           <span class="nv">$table</span><span class="o">-&gt;</span><span class="na">unique</span><span class="p">(</span><span class="s1">'link'</span><span class="p">);</span>
+        <span class="p">});</span>
+    <span class="p">}</span>
+
+    <span class="sd">/**
+     * Reverse the migrations.
+     *
+     * @return void
+     */</span>
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">down</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="nx">Schema</span><span class="o">::</span><span class="na">table</span><span class="p">(</span><span class="s1">'myTable'</span><span class="p">,</span> <span class="k">function</span> <span class="p">(</span><span class="nx">Blueprint</span> <span class="nv">$table</span><span class="p">)</span> <span class="p">{</span>
+            <span class="nv">$table</span><span class="o">-&gt;</span><span class="na">dropUnique</span><span class="p">(</span><span class="s1">'offers_link_unique'</span><span class="p">);</span>
+        <span class="p">});</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+<span class="cp">?&gt;</span>
+</code></pre>
+</div>
+
+<p><a href="https://gist.github.com/anazard/47b3af3f1fa3de6c5cbfbeffd16da990">This snippet on Github Gist</a></p>
+
+<p>Notice how the migration is done in the up function and its counterpart down. Laravel chooses a reasonable name for the index, therefore it has to be used in order to be rolled back. Otherwise, you’ll get an error when trying to undo your last migration.</p>
+
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-md-12">
+          <hr>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-md-12">
+          <h5>
+            Tags:
+            
+            <span class="badge badge-default">programming</span>
+            
+            <span class="badge badge-default">php</span>
+            
+            <span class="badge badge-default">laravel</span>
+            
+            <span class="badge badge-default">back-end</span>
+            
+            <span class="badge badge-default">technology</span>
+            
+          </h5>
+        </div>
+      </div>
+
+      <!-- <div class="row">
+        <div class="col-sm-12">
+          <h2>Grab your spot</h2>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-sm-12">
+          <h2>It is free</h2>
+        </div>
+      </div> -->
+
+  </body>
+</html>
