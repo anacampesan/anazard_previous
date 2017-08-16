@@ -100,17 +100,20 @@ pre {
     text-align: center; }
 
   .post-list-img {
-    margin-bottom: 20px; } }
+    margin-bottom: 20px; }
+
+  .navbar {
+    background: rgba(0, 0, 0, 0.7) !important; } }
 @media (min-width: 768px) {
   .container-fluid {
     margin-right: 10%;
     margin-left: 10%; } }
-.jumbotron {
+.jumbotron h1, .jumbotron h2, .jumbotron h3 {
   text-shadow: 5px 5px 7px black; }
 
 .landing {
   border-radius: 0px;
-  background-image: url("../assets/vaporwave.gif"), url("../assets/posts/default.jpg");
+  background-image: url("../assets/posts/default.jpg");
   background-repeat: no-repeat;
   background-attachment: fixed;
   height: 100vh;
@@ -221,3 +224,6 @@ pre {
   background-size: cover;
   font-family: 'Press Start 2P', cursive;
   text-align: center; }
+
+.home .card-title {
+  min-height: 2em; }

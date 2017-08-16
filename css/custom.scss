@@ -17,6 +17,10 @@
   .post-list-img {
     margin-bottom: 20px;
   }
+
+  .navbar {
+    background: rgba(0, 0, 0, 0.7) !important;
+  }
 }
 
 @media (min-width: 768px) {
@@ -27,14 +31,14 @@
 }
 
 .jumbotron {
-  // .shadow {
+  h1, h2, h3 {
     text-shadow: 5px 5px 7px rgba(0, 0, 0, 1);
-  // }
+  }
 }
 
 .landing {
   border-radius: 0px;
-  background-image: url('../assets/vaporwave.gif'), url('../assets/posts/default.jpg');
+  background-image: /*url('../assets/vaporwave.gif'),*/ url('../assets/posts/default.jpg');
   background-repeat: no-repeat;
   background-attachment: fixed;
   height: 100vh;
@@ -177,5 +181,10 @@
   text-align: center;
   h1 {
 
+  }
+}
+.home {
+  .card-title {
+    min-height: 2em;
   }
 }

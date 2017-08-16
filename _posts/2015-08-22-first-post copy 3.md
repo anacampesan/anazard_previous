@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Second Post"
+title: "First post of this blog first post of this blog"
 tags: [blog, first]
 img: ['4.jpg']
 ---
