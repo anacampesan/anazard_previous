@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title> Toggling dropdown menu with Javascript |  anazard.me</title>
+
+<script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+<script src="scripts/app.js"></script>
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="css/custom.css">
+<link rel="shortcut icon" type="image/png" href="assets/icon.png">
+
+  </head>
+  <body>
+    <nav class="navbar navbar-toggleable-md navbar-light bg-faded fixed-top" id="navbar">
+  <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <!-- <a class="navbar-brand" href=".">
+    <img src="../assets/logo.png" width="30" height="30" alt="">
+    <i class="fa fa-bolt" aria-hidden="true"></i>
+  </a> -->
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item">
+        <a class="nav-link" href="/">
+          <i class="fa fa-home" aria-hidden="true"></i> Home
+        </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/posts">
+          <i class="fa fa-pencil" aria-hidden="true"></i> Posts
+        </a>
+      </li>
+      <!-- <li class="nav-item">
+        <a class="nav-link disabled" href="#">
+          <i class="fa fa-briefcase" aria-hidden="true"></i> Workshops
+        </a>
+      </li> -->
+    </ul>
+    <ul class="navbar-nav navbar-left">
+      <li class="nav-item">
+        <a class="nav-link" href="/about">
+          <i class="fa fa-vcard-o" aria-hidden="true"></i> About
+        </a>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+    <div class="jumbotron posts-header">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-md-12">
+            <h1 >Toggling dropdown menu with Javascript</h1>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="container-fluid posts-body">
+      <div class="row">
+        <div class="col-sm-12 panel">
+          <h2>Toggling dropdown menu with Javascript</h2>
+          <strong>
+            August 17, 2017 -
+            <a href="./about">@anazard</a>
+          </strong>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-md-12">
+          <hr>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-sm-12 panel">
+          <p>I came across a very interesting and common situation in which I had to toggle displaying a dropdown div upon clicking on a firing button. If the target of the click was any other element in the screen, the dropdown menu had to be closed.</p>
+
+<div class="language-html highlighter-rouge"><pre class="highlight"><code><span class="nt">&lt;button</span> <span class="na">id=</span><span class="s">"notificationBtn"</span><span class="nt">&gt;</span>Menu<span class="nt">&lt;/button&gt;</span>
+
+<span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">"notificationBox"</span> <span class="na">style=</span><span class="s">"display: none;"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;ul&gt;</span>
+    <span class="nt">&lt;li&gt;</span>...<span class="nt">&lt;/li&gt;</span>
+    <span class="nt">&lt;li&gt;</span>...<span class="nt">&lt;/li&gt;</span>
+    <span class="nt">&lt;li&gt;</span>...<span class="nt">&lt;/li&gt;</span>
+  <span class="nt">&lt;/ul&gt;</span>
+<span class="nt">&lt;/div&gt;</span>
+</code></pre>
+</div>
+
+<p>The first step to deal with the case is adding an event listener responsible for switching the dropdown display to none to the body of the document.</p>
+
+<p>Now we add the event listener to the menu button, which will toggle the display depending on the current state of the menu div AND stop the propagation of the event, not letting it reach the listener in the body of the document.</p>
+
+<div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="nb">document</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="s1">'DOMContentLoaded'</span><span class="p">,</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+  <span class="kd">var</span> <span class="nx">notificationBtn</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s1">'notificationBtn'</span><span class="p">);</span>
+  <span class="kd">var</span> <span class="nx">notificationBox</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s1">'notificationBox'</span><span class="p">);</span>
+
+  <span class="nb">document</span><span class="p">.</span><span class="nx">body</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="s1">'click'</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">ev</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">notificationBox</span><span class="p">.</span><span class="nx">style</span><span class="p">.</span><span class="nx">display</span> <span class="o">=</span> <span class="s1">'none'</span><span class="p">;</span>
+  <span class="p">});</span>
+
+  <span class="nx">notificationBtn</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="s1">'click'</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">ev</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">ev</span><span class="p">.</span><span class="nx">stopPropagation</span><span class="p">();</span>
+    <span class="nx">notificationBox</span><span class="p">.</span><span class="nx">style</span><span class="p">.</span><span class="nx">display</span> <span class="o">=</span> <span class="nx">notificationBox</span><span class="p">.</span><span class="nx">style</span><span class="p">.</span><span class="nx">display</span> <span class="o">==</span> <span class="s1">'none'</span> <span class="p">?</span> <span class="s1">'block'</span> <span class="p">:</span> <span class="s1">'none'</span><span class="p">;</span>
+  <span class="p">});</span>
+<span class="p">});</span>
+</code></pre>
+</div>
+
+<p><a href="https://gist.github.com/anazard/3270023f25e54a6e491b071daec98377">This snippet on Github Gist</a></p>
+
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-md-12">
+          <hr>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-md-12">
+          <h5>
+            Tags:
+            
+            <span class="badge badge-default">programming</span>
+            
+            <span class="badge badge-default">javascript</span>
+            
+            <span class="badge badge-default">front-end</span>
+            
+            <span class="badge badge-default">technology</span>
+            
+          </h5>
+        </div>
+      </div>
+
+      <!-- <div class="row">
+        <div class="col-sm-12">
+          <h2>Grab your spot</h2>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-sm-12">
+          <h2>It is free</h2>
+        </div>
+      </div> -->
+
+  </body>
+</html>
