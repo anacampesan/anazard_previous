@@ -122,7 +122,6 @@ a {
 
 a:hover {
   text-decoration: none;
-  color: #2fc6ff;
   -webkit-transition: color 0.2s;
   /* Safari */
   transition: color 0.2s; }
@@ -226,10 +225,6 @@ a:hover {
 .card {
   border: none;
   cursor: default; }
-
-.card:hover img {
-  filter: drop-shadow(7px 7px 6px #000) opacity(0.7);
-  transition: filter 0.1s; }
 
 .img-thumbnail {
   filter: opacity(0.8); }

@@ -47,7 +47,7 @@ a {
 
 a:hover {
   text-decoration: none;
-  color: $link_hover;
+  // color: $link_hover;
   -webkit-transition: color 0.2s; /* Safari */
   transition: color 0.2s;
 }
@@ -184,12 +184,12 @@ a:hover {
 }
 
 .card:hover {
-  img {
-    filter: drop-shadow(7px 7px 6px #000) opacity(0.7);
-    // -webkit-filter: hue-rotate(186deg) drop-shadow(6px 6px 3px #000) opacity(0.7);
-    transition: filter 0.1s;
-    // -webkit-transition: filter 0.1s;
-  }
+  // img {
+  //   filter: drop-shadow(7px 7px 6px #000) opacity(0.7);
+  //   // -webkit-filter: hue-rotate(186deg) drop-shadow(6px 6px 3px #000) opacity(0.7);
+  //   transition: filter 0.1s;
+  //   // -webkit-transition: filter 0.1s;
+  // }
 }
 
 .img-thumbnail {
