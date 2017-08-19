@@ -59,6 +59,7 @@ a:hover {
 }
 
 .jumbotron {
+  border-radius: 0px;
   cursor: default;
   h1, h2, h3 {
     text-shadow: 5px 5px 7px rgba(0, 0, 0, 1);
@@ -66,7 +67,6 @@ a:hover {
 }
 
 .landing {
-  border-radius: 0px;
   background-image: /*url('../assets/vaporwave.gif'),*/ url('../assets/posts/default.jpg');
   background-repeat: no-repeat;
   background-attachment: fixed;
@@ -230,4 +230,13 @@ a:hover {
   width: 200px;
   float: left;
   margin: 0 15px 10px 0;
+}
+
+.nav-item {
+  transition: background-color 0.3s;
+}
+
+.nav-item:hover {
+  background-color: $navbar_link_hover;
+  transition: background-color 0.3s;
 }
