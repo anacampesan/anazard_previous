@@ -97,13 +97,17 @@ pre {
 img, .btn, .jumbotron {
   user-select: none; }
 
-@media (max-width: 480px) {
+@media (max-width: 768px) {
   .landing-platform {
     display: none;
     visibility: hidden; }
 
   .landing-ana {
-    text-align: center; }
+    text-align: center;
+    position: relative !important;
+    padding-top: 10px;
+    vertical-align: bottom;
+    transform: translateY(90px); }
 
   .post-list-img {
     margin-bottom: 20px; }
@@ -137,8 +141,7 @@ a:hover {
   background-repeat: no-repeat;
   background-attachment: fixed;
   height: 100vh;
-  background-size: cover;
-  max-height: 100vh; }
+  background-size: cover; }
 
 .landing-title {
   color: white;
