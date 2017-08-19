@@ -3,6 +3,15 @@
 
 @import url('https://fonts.googleapis.com/css?family=Press+Start+2P');
 @import 'monokai';
+@import 'palette';
+
+::selection {
+  background-color: $selection;
+}
+
+img, .btn, .jumbotron {
+  user-select: none;
+}
 
 @media(max-width:480px) {
   .landing-platform {
@@ -30,7 +39,27 @@
   }
 }
 
+a {
+  color: $link;
+  -webkit-transition: color 0.2s; /* Safari */
+  transition: color 0.2s;
+}
+
+a:hover {
+  text-decoration: none;
+  color: $link_hover;
+  -webkit-transition: color 0.2s; /* Safari */
+  transition: color 0.2s;
+}
+
+.posts-header {
+  h1 {
+    // font-size: 36px;
+  }
+}
+
 .jumbotron {
+  cursor: default;
   h1, h2, h3 {
     text-shadow: 5px 5px 7px rgba(0, 0, 0, 1);
   }
@@ -60,7 +89,7 @@
     -ms-hyphens: auto;
     -o-hyphens: auto;
     hyphens: auto;
-    color: rgb(88, 150, 255);
+    color: $link;
     small {
       color: black;
     }
@@ -131,6 +160,7 @@
   background-size: cover;
   font-family: 'Press Start 2P', cursive;
   text-align: center;
+  word-wrap: break-word;
   h1 {
 
   }
@@ -150,18 +180,25 @@
 
 .card {
   border: none;
+  cursor: default;
+}
+
+.card:hover {
+  img {
+    filter: drop-shadow(7px 7px 6px #000) opacity(0.7);
+    // -webkit-filter: hue-rotate(186deg) drop-shadow(6px 6px 3px #000) opacity(0.7);
+    transition: filter 0.1s;
+    // -webkit-transition: filter 0.1s;
+  }
+}
+
+.img-thumbnail {
+  filter: opacity(0.8);
 }
 
 .img-fluid {
   filter: hue-rotate(0deg) drop-shadow(6px 6px 2px #000) opacity(0.7);
   // -webkit-filter: hue-rotate(0deg) drop-shadow(7px 7px 6px #000) opacity(0.7);
-  transition: filter 0.1s;
-  // -webkit-transition: filter 0.1s;
-}
-
-.img-fluid:hover {
-  filter: drop-shadow(7px 7px 6px #000) opacity(0.7);
-  // -webkit-filter: hue-rotate(186deg) drop-shadow(6px 6px 3px #000) opacity(0.7);
   transition: filter 0.1s;
   // -webkit-transition: filter 0.1s;
 }
@@ -187,4 +224,10 @@
   .card-title {
     min-height: 2em;
   }
+}
+
+.profile-pic {
+  width: 200px;
+  float: left;
+  margin: 0 15px 10px 0;
 }
