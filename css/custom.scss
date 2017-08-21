@@ -37,6 +37,9 @@ img, .btn, .jumbotron {
 }
 
 @media (min-width: 768px) {
+  p {
+    text-align: justify;
+  }
   .container-fluid {
     margin-right: 10%;
     margin-left: 10%;
@@ -238,9 +241,11 @@ a:hover {
 
 .nav-item {
   transition: background-color 0.3s;
+  border-radius: 5px;
 }
 
 .nav-item:hover {
   background-color: $navbar_link_hover;
   transition: background-color 0.3s;
+  border-radius: 5px;
 }

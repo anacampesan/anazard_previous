@@ -115,6 +115,9 @@ img, .btn, .jumbotron {
   .navbar {
     background: rgba(0, 0, 0, 0.7) !important; } }
 @media (min-width: 768px) {
+  p {
+    text-align: justify; }
+
   .container-fluid {
     margin-right: 10%;
     margin-left: 10%; } }
@@ -252,8 +255,10 @@ a:hover {
   margin: 0 15px 10px 0; }
 
 .nav-item {
-  transition: background-color 0.3s; }
+  transition: background-color 0.3s;
+  border-radius: 5px; }
 
 .nav-item:hover {
   background-color: rgba(224, 221, 255, 0.3);
-  transition: background-color 0.3s; }
+  transition: background-color 0.3s;
+  border-radius: 5px; }
