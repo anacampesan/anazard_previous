@@ -1,5 +1,6 @@
 ---
 layout: post
+comments: true
 title: "Rolling back migrations in PHP and Laravel"
 tags: [programming, php, laravel, back-end, technology]
 img: ['3.jpg']

@@ -1,5 +1,6 @@
 ---
 layout: post
+comments: true
 title: "Getting the hostname of a url in Javascript"
 tags: [programming, javascript, front-end, technology]
 img: ['1.jpg']

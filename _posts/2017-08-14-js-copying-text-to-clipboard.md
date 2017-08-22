@@ -1,5 +1,6 @@
 ---
 layout: post
+comments: true
 title: "Copying text to clipboard in Javascript"
 tags: [programming, javascript, front-end, technology]
 img: ['4.jpg']

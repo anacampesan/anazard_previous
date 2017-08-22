@@ -1,9 +1,9 @@
 ---
 layout: post
+comments: true
 title: "Toggling dropdown menu with Javascript"
 tags: [programming, javascript, front-end, technology]
 img: ['4.jpg']
-comments: true
 ---
 
 I came across a very interesting and common situation in which I had to toggle displaying a dropdown div upon clicking on a firing button. If the target of the click was any other element in the screen, the dropdown menu had to be closed.
