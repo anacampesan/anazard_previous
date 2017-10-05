@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title> [Javascript] Returning Query Parameters |  anazard.me</title>
+
+<script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+<script src="scripts/app.js"></script>
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="css/custom.css">
+<link rel="shortcut icon" type="image/png" href="assets/icon.png">
+
+  </head>
+  <body>
+    <nav class="navbar navbar-toggleable-md navbar-light bg-faded fixed-top" id="navbar">
+  <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <!-- <a class="navbar-brand" href=".">
+    <img src="../assets/logo.png" width="30" height="30" alt="">
+    <i class="fa fa-bolt" aria-hidden="true"></i>
+  </a> -->
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item">
+        <a class="nav-link" href="/">
+          <i class="fa fa-home" aria-hidden="true"></i> Home
+        </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/posts">
+          <i class="fa fa-file-text" aria-hidden="true"></i> Posts
+        </a>
+      </li>
+      <!-- <li class="nav-item">
+        <a class="nav-link disabled" href="#">
+          <i class="fa fa-briefcase" aria-hidden="true"></i> Workshops
+        </a>
+      </li> -->
+    </ul>
+    <ul class="navbar-nav navbar-left">
+      <li class="nav-item">
+        <a class="nav-link" href="/about">
+          <i class="fa fa-info-circle" aria-hidden="true"></i> About
+        </a>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+    <div class="jumbotron posts-header">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-md-12">
+            <h1 >[Javascript] Returning Query Parameters</h1>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="container-fluid posts-body">
+      <div class="row">
+        <div class="col-sm-12 panel">
+          <h2>[Javascript] Returning Query Parameters</h2>
+          <strong>
+            October  5, 2017 -
+            <a href="./about">@anazard</a>
+          </strong>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-md-12">
+          <hr>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-sm-12 panel">
+          <p>This function that returns the value of a query parameter or false when it’s inexistent.
+The trick is to track both starting and ending positions of the desired parameter, so that we’re able to split it from the query and return its value.</p>
+
+<div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="kd">function</span> <span class="nx">getQueryParam</span><span class="p">(</span><span class="nx">param</span><span class="p">)</span> <span class="p">{</span>
+  <span class="c1">// returns the query parameters portion from the url and gets rid of the ? at position [0]</span>
+	<span class="kd">var</span> <span class="nx">query</span> <span class="o">=</span> <span class="nb">window</span><span class="p">.</span><span class="nx">location</span><span class="p">.</span><span class="nx">search</span><span class="p">.</span><span class="nx">substring</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span>
+	<span class="kd">var</span> <span class="nx">startPos</span> <span class="o">=</span> <span class="nx">query</span><span class="p">.</span><span class="nx">indexOf</span><span class="p">(</span><span class="nx">param</span><span class="p">);</span>
+	<span class="k">if</span> <span class="p">(</span><span class="nx">startPos</span> <span class="o">==</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span> <span class="p">{</span>
+		<span class="k">return</span> <span class="kc">false</span><span class="p">;</span>
+	<span class="p">}</span>
+	<span class="nx">query</span> <span class="o">=</span> <span class="nx">query</span><span class="p">.</span><span class="nx">substring</span><span class="p">(</span><span class="nx">startPos</span><span class="p">);</span>
+
+  <span class="c1">// checks if the desired param is the last one in the query</span>
+	<span class="kd">var</span> <span class="nx">endPos</span> <span class="o">=</span> <span class="p">(</span><span class="nx">query</span><span class="p">.</span><span class="nx">indexOf</span><span class="p">(</span><span class="s1">'&amp;'</span><span class="p">,</span> <span class="nx">startPos</span><span class="p">)</span> <span class="o">==</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span> <span class="p">?</span> <span class="nx">query</span><span class="p">.</span><span class="nx">indexOf</span><span class="p">(</span><span class="s1">'&amp;'</span><span class="p">)</span>
+                                                    <span class="p">:</span> <span class="nx">query</span><span class="p">.</span><span class="nx">indexOf</span><span class="p">(</span><span class="s1">'&amp;'</span><span class="p">,</span> <span class="nx">startPos</span><span class="p">);</span>
+	<span class="kd">var</span> <span class="nx">keyValue</span> <span class="o">=</span> <span class="nx">query</span><span class="p">.</span><span class="nx">substring</span><span class="p">(</span><span class="nx">startPos</span><span class="p">,</span> <span class="nx">endPos</span><span class="p">);</span>
+	<span class="k">return</span> <span class="nx">keyValue</span><span class="p">.</span><span class="nx">split</span><span class="p">(</span><span class="s1">'='</span><span class="p">)[</span><span class="mi">1</span><span class="p">];</span>
+<span class="p">}</span>
+</code></pre>
+</div>
+
+<p>This is only of the many ways in which you can implement a similar functionality. Feel free to come up with new ones below!</p>
+
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-md-12">
+          <hr>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-md-12">
+          <h5>
+            Tags:
+            
+            <span class="badge badge-default">programming</span>
+            
+            <span class="badge badge-default">javascript</span>
+            
+            <span class="badge badge-default">front-end</span>
+            
+            <span class="badge badge-default">technology</span>
+            
+          </h5>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-sm-12">
+          
+            <div id="disqus_thread"></div>
+            <script>
+            (function() { // DON'T EDIT BELOW THIS LINE
+            var d = document, s = d.createElement('script');
+            s.src = 'https://anazard-me.disqus.com/embed.js';
+            s.setAttribute('data-timestamp', +new Date());
+            (d.head || d.body).appendChild(s);
+            })();
+            </script>
+            <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+          
+        </div>
+      </div>
+
+  </body>
+</html>
