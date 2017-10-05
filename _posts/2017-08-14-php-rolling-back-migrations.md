@@ -1,7 +1,7 @@
 ---
 layout: post
 comments: true
-title: "Migrations in PHP and Laravel"
+title: "[PHP] Migrations in Laravel"
 tags: [programming, php, laravel, back-end, technology]
 img: ['laravel.png']
 ---

@@ -1,7 +1,7 @@
 ---
 layout: post
 comments: true
-title: "Le Subjonctif Présent"
+title: "[Français] Le Subjonctif Présent"
 tags: [français, grammaire, subjonctif, présent]
 img: ['chocolatine.png']
 excerpt_separator: <!--more-->
