@@ -28,4 +28,12 @@ function getQueryParam(param) {
 }
 ```
 
+And it would be used like this:
+
+```js
+// url ~> http://mytestwebsite.com?first=1&second=2
+console.log('First parameter: ' getQueryParam('first'));
+// 2
+```
+
 This is only of the many ways in which you can implement a similar functionality. Feel free to come up with new ones below!
