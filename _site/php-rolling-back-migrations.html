@@ -5,7 +5,7 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title> Rolling back migrations in PHP and Laravel |  anazard.me</title>
+<title> Migrations in PHP and Laravel |  anazard.me</title>
 
 <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
@@ -60,7 +60,7 @@
       <div class="container-fluid">
         <div class="row">
           <div class="col-md-12">
-            <h1 >Rolling back migrations in PHP and Laravel</h1>
+            <h1 >Migrations in PHP and Laravel</h1>
           </div>
         </div>
       </div>
@@ -69,7 +69,7 @@
     <div class="container-fluid posts-body">
       <div class="row">
         <div class="col-sm-12 panel">
-          <h2>Rolling back migrations in PHP and Laravel</h2>
+          <h2>Migrations in PHP and Laravel</h2>
           <strong>
             August 14, 2017 -
             <a href="./about">@anazard</a>
@@ -103,8 +103,9 @@
      */</span>
     <span class="k">public</span> <span class="k">function</span> <span class="nf">up</span><span class="p">()</span>
     <span class="p">{</span>
-        <span class="nx">Schema</span><span class="o">::</span><span class="na">table</span><span class="p">(</span><span class="s1">'myTable'</span><span class="p">,</span> <span class="k">function</span> <span class="p">(</span><span class="nx">Blueprint</span> <span class="nv">$table</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nx">Schema</span><span class="o">::</span><span class="na">create</span><span class="p">(</span><span class="s1">'myTable'</span><span class="p">,</span> <span class="k">function</span> <span class="p">(</span><span class="nx">Blueprint</span> <span class="nv">$table</span><span class="p">)</span> <span class="p">{</span>
            <span class="nv">$table</span><span class="o">-&gt;</span><span class="na">unique</span><span class="p">(</span><span class="s1">'link'</span><span class="p">);</span>
+           <span class="nv">$table</span><span class="o">-&gt;</span><span class="na">timestamps</span><span class="p">();</span>
         <span class="p">});</span>
     <span class="p">}</span>
 
@@ -127,6 +128,8 @@
 <p><a href="https://gist.github.com/anazard/47b3af3f1fa3de6c5cbfbeffd16da990">This snippet on Github Gist</a></p>
 
 <p>Notice how the migration is done in the up function and its counterpart down. Laravel chooses a reasonable name for the index, therefore it has to be used in order to be rolled back. Otherwise, you’ll get an error when trying to undo your last migration.</p>
+
+<p>$table-&gt;timestamps() is responsible for creating two timestamp fields, created_at and updated_at, making it easier to track changes in your data.</p>
 
         </div>
       </div>

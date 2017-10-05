@@ -229,11 +229,22 @@ a:hover {
   border: none;
   cursor: default; }
 
+.home .card-title {
+  height: 3em;
+  line-height: 1em;
+  overflow: hidden; }
+.home .card-text {
+  height: 5em;
+  line-height: 1em;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  text-align: left; }
+
 .img-thumbnail {
   filter: opacity(0.8); }
 
 .img-fluid {
-  filter: hue-rotate(0deg) drop-shadow(6px 6px 2px #000) opacity(0.7);
+  filter: hue-rotate(0deg) drop-shadow(2px 2px 1px #000) opacity(0.8);
   transition: filter 0.1s; }
 
 .playlist {

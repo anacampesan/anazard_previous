@@ -3,11 +3,12 @@ layout: post
 comments: true
 title: "Le Subjonctif Présent"
 tags: [français, grammaire, subjonctif, présent]
-img: ['4.jpg']
+img: ['chocolatine.png']
+excerpt_separator: <!--more-->
 ---
 
 On utilise le debut de la conjugaison a la troisieme personne du pluriel (ILS) pour construire le subjonctif des verbes. Il y a deux exceptions: NOUS et VOUS, qui utilisent eux memes.
-
+<!--more-->
 ## Premier groupe
 Radical de l'indicatif present + e, es, e, ions, iez, ent.
 

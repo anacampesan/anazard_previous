@@ -3,10 +3,10 @@ layout: post
 comments: true
 title: "Getting the hostname of a url in Javascript"
 tags: [programming, javascript, front-end, technology]
-img: ['1.jpg']
+img: ['js.png']
 ---
 
-I was looking for ways of getting the hostname part of a given url. For my surprise, JS had a built-in feature to do that, as long as the link is within a **< a >** tag. So we have to create a temporary tag to hold the link, extract the hostname and get rid of it when we’re done.
+I was looking for ways of getting the hostname part of a given url. For my surprise, JS had a built-in feature for that, as long as the link is within a **< a >** tag. So we have to create a temporary tag to hold the link, extract the hostname and get rid of it once we're done.
 
 ```js
 // JS function

@@ -3,7 +3,7 @@ layout: post
 comments: true
 title: "Copying text to clipboard in Javascript"
 tags: [programming, javascript, front-end, technology]
-img: ['4.jpg']
+img: ['js.png']
 ---
 
 I was looking into ways to copy a given link to the clipboard upon clicking a button. JS has **document.execCommand(‘copy’)** for some operations of the same nature. Turns out this method only allows you to copy text that is currently selected, and you can only select text that’s in either a text input or textarea.
@@ -13,29 +13,28 @@ The solution I came up with consists in creating a temporary input in which we c
 ```html
 <!-- Button -->
 
-<button class="btn btn-default btn-copy" id="link'+row.id+'" formaction="'+ row.link +'">
-  <i class="fa fa-copy"></i> Copy
-</button>
+<div id="secretInfo" style="display: none;">secret info to be copied</div>
+<button type="button" id="btnCopy">Copy Hidden Info to Clipboard</button>
 ```
 
 ```javascript
 // JS function
 
-$(document).ready(function() {
-  $btnCopy = $('.btn-copy');
-  $btnCopy.on('click', function(event) {
-    copyToClipboard(event.target.id);
-  });
+var $body      = document.getElementsByTagName('body')[0];
+var $btnCopy   = document.getElementById('btnCopy');
+var secretInfo = document.getElementById('secretInfo').innerHTML;
 
+var copyToClipboard = function(secretInfo) {
+  var $tempInput = document.createElement('INPUT');
+  $body.appendChild($tempInput);
+  $tempInput.setAttribute('value', secretInfo)
+  $tempInput.select();
+  document.execCommand('copy');
+  $body.removeChild($tempInput);
+}
 
-  var copyToClipboard = function(linkId) {
-    var $tempInput = $('<input>');
-    $('body').append($tempInput);
-    $linkText = $('#' + linkId).attr('formaction');
-    $tempInput.val($linkText).select();
-    document.execCommand('copy');
-    $tempInput.remove();
-  };
+$btnCopy.addEventListener('click', function(ev) {
+  copyToClipboard(secretInfo);
 });
 ```
 
