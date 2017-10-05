@@ -1,7 +1,7 @@
 ---
 layout: post
 comments: true
-title: "Toggling dropdown menu with Javascript"
+title: "[Javascript] Toggling dropdown menu"
 tags: [programming, javascript, front-end, technology]
 img: ['js.png']
 ---
