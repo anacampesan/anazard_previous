@@ -273,3 +273,7 @@ a:hover {
   background-color: rgba(224, 221, 255, 0.3);
   transition: background-color 0.3s;
   border-radius: 5px; }
+
+.highlight {
+  padding: 10px;
+  border-radius: 5px; }
