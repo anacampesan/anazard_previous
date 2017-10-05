@@ -9,6 +9,7 @@ excerpt_separator: <!--more-->
 
 This function that returns the value of a query parameter or false when it's inexistent.
 The trick is to track both starting and ending positions of the desired parameter, so that we're able to split it from the query and return its value.
+<!--more-->
 
 ```js
 function getQueryParam(param) {
@@ -27,6 +28,7 @@ function getQueryParam(param) {
 	return keyValue.split('=')[1];
 }
 ```
+[This snippet on Github Gist](https://gist.github.com/anazard/a37b997d0bce174656bda9f6faf7f88f)
 
 And it would be used like this:
 

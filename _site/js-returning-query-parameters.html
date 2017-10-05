@@ -86,7 +86,8 @@
       <div class="row">
         <div class="col-sm-12 panel">
           <p>This function that returns the value of a query parameter or false when it’s inexistent.
-The trick is to track both starting and ending positions of the desired parameter, so that we’re able to split it from the query and return its value.</p>
+The trick is to track both starting and ending positions of the desired parameter, so that we’re able to split it from the query and return its value.
+<!--more--></p>
 
 <div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="kd">function</span> <span class="nx">getQueryParam</span><span class="p">(</span><span class="nx">param</span><span class="p">)</span> <span class="p">{</span>
   <span class="c1">// returns the query parameters portion from the url and gets rid of the ? at position [0]</span>
@@ -105,6 +106,7 @@ The trick is to track both starting and ending positions of the desired paramete
 <span class="p">}</span>
 </code></pre>
 </div>
+<p><a href="https://gist.github.com/anazard/a37b997d0bce174656bda9f6faf7f88f">This snippet on Github Gist</a></p>
 
 <p>And it would be used like this:</p>
 
