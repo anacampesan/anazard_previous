@@ -1,7 +1,7 @@
 ---
 layout: post
 comments: true
-title: "[Javascript] Returning Query Parameters"
+title: "[Javascript] Returning query parameters"
 tags: [programming, javascript, front-end, technology]
 img: ['js.png']
 excerpt_separator: <!--more-->
