@@ -46,6 +46,14 @@ img, .btn, .jumbotron {
   }
 }
 
+footer {
+  border-top: 1px solid grey;
+  margin-top: 32px;
+  margin-right: 10%;
+  margin-left: 10%;
+  padding: 20px;
+}
+
 a {
   color: $link;
   -webkit-transition: color 0.2s; /* Safari */
@@ -129,10 +137,6 @@ a:hover {
   margin: 0 auto;
   bottom: 90px;
   position: absolute;
-}
-
-.placeholder {
-  height: 300px;
 }
 
 // navbar
