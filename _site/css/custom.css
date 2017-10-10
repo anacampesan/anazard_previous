@@ -121,6 +121,13 @@ img, .btn, .jumbotron {
   .container-fluid {
     margin-right: 10%;
     margin-left: 10%; } }
+footer {
+  border-top: 1px solid grey;
+  margin-top: 32px;
+  margin-right: 10%;
+  margin-left: 10%;
+  padding: 20px; }
+
 a {
   color: #2f7cff;
   -webkit-transition: color 0.2s;
@@ -188,9 +195,6 @@ a:hover {
   margin: 0 auto;
   bottom: 90px;
   position: absolute; }
-
-.placeholder {
-  height: 300px; }
 
 .navbar {
   padding-right: 10%;
