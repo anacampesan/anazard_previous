@@ -22,8 +22,11 @@ function getQueryParam(param) {
 	query = query.substring(startPos);
 
   // checks if the desired param is the last one in the query
-	var endPos = (query.indexOf('&', startPos) == -1) ? query.indexOf('&')
-                                                    : query.indexOf('&', startPos);
+	if (query.indexOf('&') > -1) {
+		var endPos = (query.indexOf('&', startPos) == -1) ? query.indexOf('&')
+																											: query.indexOf('&', startPos);
+	}
+
 	var keyValue = query.substring(startPos, endPos);
 	return keyValue.split('=')[1];
 }
@@ -34,7 +37,7 @@ And it would be used like this:
 
 ```js
 // url ~> http://mytestwebsite.com?first=1&second=2
-console.log('First parameter: ' getQueryParam('first'));
+console.log('First parameter: ' + getQueryParam('first'));
 // 2
 ```
 
