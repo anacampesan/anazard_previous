@@ -13,7 +13,7 @@ Oui, en general, les gens peuvent comprendre assez bien, mais ils ne se sentent 
 
 Disclaimer: comme mon ordinateur a le clavier american, je manque d'accents.
 
-### Debutants
+### Facile
 
 - [French for Beginners](https://itunes.apple.com/ca/podcast/french-for-beginners/id582330874?mt=2) (parfait pour ceux que savent qu'un seul mot)
 - [Coffee Break French](https://itunes.apple.com/ca/podcast/coffee-break-french-two-minute-challenge/id926980081?mt=2)
