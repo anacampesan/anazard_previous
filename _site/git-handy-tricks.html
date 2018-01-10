@@ -5,7 +5,7 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title> [Français] Podcasts |  anazard.me</title>
+<title> [GIT] Handy tricks |  anazard.me</title>
 
 <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
@@ -61,7 +61,7 @@
   <div class="container-fluid">
     <div class="row">
       <div class="col-md-12">
-        <h1 >[Français] Podcasts</h1>
+        <h1 >[GIT] Handy tricks</h1>
       </div>
     </div>
   </div>
@@ -70,9 +70,9 @@
 <div class="container-fluid posts-body">
   <div class="row">
     <div class="col-sm-12 panel">
-      <h2>[Français] Podcasts</h2>
+      <h2>[GIT] Handy tricks</h2>
       <strong>
-        October 25, 2017 -
+        January 10, 2018 -
         <a href="./about">@anazard</a>
       </strong>
     </div>
@@ -86,44 +86,25 @@
 
   <div class="row">
     <div class="col-sm-12 panel">
-      <p>Salut! Comme vous deja le savent, je suis en train d’apprendre le français. C’est tout a fait une trés longue route, mais toujours amusante. Peut-etre que mon moyen préféré de pratiquer est d’ecouter des podcasts, étant donné que le listening est ma competence la plus faible en n’importe quelle langue.
-<!--more-->
-Oui, en general, les gens peuvent comprendre assez bien, mais ils ne se sentent pas a l’aise de parler. Cela n’est pas mon cas. De toute façon, je vous donne ma liste personelle et vous souhaite une bonne apprentissage. Il fault remarquer qu’ils ne sont pas tous des podcasts pour des etudiants des langues: il y a aussi des sujets qui m’interessent, comme la technologie et la musique. Avez-vous des suggestions? Laissez-moi des commentaires e je les ajouterai a la liste. ☺️ A la prochaine!</p>
+      <p>What’s up, everyone? Happy new year, before I forget! :) Long time no post, eh? I’ve been on a trip to Brazil for the holidays, but that’s not the subject today. Let’s get on to a couple handy git tricks I used quite often these days.</p>
 
-<p>Disclaimer: comme mon ordinateur a le clavier american, je manque d’accents.</p>
+<h3 id="reverting-the-current-branch-to-a-specific-commit">Reverting the current branch to a specific commit</h3>
 
-<h3 id="facile">Facile</h3>
+<p>Committed anything by mistake and want to rollback?</p>
 
-<ul>
-  <li><a href="https://itunes.apple.com/ca/podcast/french-for-beginners/id582330874?mt=2">French for Beginners</a> (parfait pour ceux que savent qu’un seul mot)</li>
-  <li><a href="https://itunes.apple.com/ca/podcast/coffee-break-french-two-minute-challenge/id926980081?mt=2">Coffee Break French</a></li>
-</ul>
+<div class="highlighter-rouge"><pre class="highlight"><code>git reset --hard &lt;commit_sha&gt;
+</code></pre>
+</div>
 
-<h3 id="intermediaire">Intermediaire</h3>
+<h3 id="copying-files-across-branches">Copying files across branches</h3>
 
-<ul>
-  <li><a href="https://itunes.apple.com/ca/podcast/podcast-francais-authentique/id500549470?mt=2">Français Authentique</a> (tellement bon, je l’ecoute presque tous les jours)</li>
-  <li><a href="https://itunes.apple.com/ca/podcast/learn-french-with-french-podcasts-fran%C3%A7ais-avec-pierre/id972673390?mt=2">Français Avec Pierre</a></li>
-  <li><a href="https://itunes.apple.com/ca/podcast/french-podcast/id427774337?mt=2">News in Slow French</a></li>
-</ul>
+<p>Use this in case you have new files that have been committed, and you also want them to be in another branch without having to merge it with a pull request, for example. On the desired branch do the following:</p>
 
-<h3 id="avancé">Avancé</h3>
+<div class="highlighter-rouge"><pre class="highlight"><code>git checkout &lt;branch_where_files_are&gt; -- &lt;file_relative_path&gt;
+</code></pre>
+</div>
 
-<ul>
-  <li><a href="https://itunes.apple.com/ca/podcast/scepticisme-scientifique/id322099929?mt=2">Scepticisme Scientifique</a></li>
-  <li><a href="https://itunes.apple.com/ca/podcast/au-c%C5%93ur-de-lhistoire-de-franck-ferrand/id423534806?mt=2">Au Coeur de l’Histoire</a></li>
-  <li><a href="https://itunes.apple.com/ca/podcast/la-t%C3%AAte-au-carr%C3%A9/id294060079?mt=2">La Tete au Carré</a></li>
-  <li><a href="https://itunes.apple.com/ca/podcast/le-ruby-nouveau/id1211857817?mt=2">Le Ruby Nouveau</a> (developpement de logiciel en general)</li>
-  <li><a href="https://itunes.apple.com/ca/podcast/aujourdhui-lhistoire/id1040170456?mt=2">Aujourd’hui L’Histoire</a> (quebecois)</li>
-  <li><a href="http://feeds.soundcloud.com/users/soundcloud:users:328302816/sounds.rss">Developpeur de Vie</a></li>
-</ul>
-
-<h3 id="les-quebecois-a-toute-vitesse-plus-difficile">Les quebecois a toute vitesse (plus difficile)</h3>
-
-<ul>
-  <li><a href="https://itunes.apple.com/ca/podcast/le-f-ing-podcast/id1153019627?mt=2">Le Fucking Podcast</a></li>
-  <li><a href="https://itunes.apple.com/ca/podcast/le-podcast-du-tabarnac/id1094569432?mt=2">Le Podcast du Tabarnac</a></li>
-</ul>
+<p>I will keep updating this post over time.</p>
 
     </div>
   </div>
@@ -139,13 +120,11 @@ Oui, en general, les gens peuvent comprendre assez bien, mais ils ne se sentent 
       <h5>
         Tags:
         
-        <span class="badge badge-default">french</span>
+        <span class="badge badge-default">git</span>
         
-        <span class="badge badge-default">francais</span>
+        <span class="badge badge-default">tricks</span>
         
-        <span class="badge badge-default">languages</span>
-        
-        <span class="badge badge-default">podcasts</span>
+        <span class="badge badge-default">development</span>
         
       </h5>
     </div>

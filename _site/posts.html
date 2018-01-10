@@ -87,6 +87,61 @@
           <div class="card-block">
             <div class="row">
               <div class="col-md-3">
+                <img src="./assets/posts/git.png" class="img-fluid post-list-img">
+              </div>
+              <div class="col-md-9">
+                <!-- <a href="/git-handy-tricks.html"> -->
+                  <h4 class="card-title">
+                    <a href="/git-handy-tricks.html">
+                      [GIT] Handy tricks
+                    </a>
+                  </h4>
+
+                  <h5><small>January 10, 2018</small></h5>
+
+                  
+                    <span class="badge badge-default">git</span>
+                  
+                    <span class="badge badge-default">tricks</span>
+                  
+                    <span class="badge badge-default">development</span>
+                  
+
+                  <p class="card-text"><p>What’s up, everyone? Happy new year, before I forget! :) Long time no post, eh? I’ve been on a trip to Brazil for the holidays, but that’s not the subject today. Let’s get on to a couple handy git tricks I used quite often these days.</p>
+
+<h3 id="reverting-the-current-branch-to-a-specific-commit">Reverting the current branch to a specific commit</h3>
+
+<p>Committed anything by mistake and want to rollback?</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>git reset --hard &lt;commit_sha&gt;
+</code></pre>
+</div>
+
+<h3 id="copying-files-across-branches">Copying files across branches</h3>
+
+<p>Use this in case you have new files that have been committed, and you also want them to be in another branch without having to merge it with a pull request, for example. On the desired branch do the following:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>git checkout &lt;branch_where_files_are&gt; -- &lt;file_relative_path&gt;
+</code></pre>
+</div>
+
+<p>I will keep updating this post over time.</p>
+</p>
+                <!-- </a> -->
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  
+    <div class="row">
+      <div class="col-md-12">
+        <div class="card">
+          <!--  -->
+          <div class="card-block">
+            <div class="row">
+              <div class="col-md-3">
                 <img src="./assets/posts/chocolatine.png" class="img-fluid post-list-img">
               </div>
               <div class="col-md-9">
