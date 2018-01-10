@@ -88,9 +88,43 @@
     <div class="col-sm-12 panel">
       <p>Migrations have the role of tracking all changes we need to make in our databases since the moment of its creation. It’s pretty much described by Laravel as a version control.</p>
 
-<p><strong>php artisan make:migration</strong></p>
+<div class="highlighter-rouge"><pre class="highlight"><code>php artisan make:migration &lt;name&gt;
+</code></pre>
+</div>
+
+<p>Appropriate names range from <strong>add_table_mynewtable</strong> to <strong>add_newfield_to_existingtable</strong> and help identify the reason why this migration exists.</p>
 
 <p>This will create a new migration file. Essentially, it contains two functions: up and down. Up is the actual change you’d like to make, while down is supposed to have the backwards operation you’d use to rollback to previous state.</p>
+
+<p>What goes in the up/down function depends on what you want to do. In case you need a new table, use Schema::create(‘new_table_name’, function(Blueprint $table)). If you’re adding new fields to an existing table, use Scheema::table(‘existing_table_name’, function(Blueprint $table)).</p>
+
+<p>The parameter $table is what allows you to create the attributes.</p>
+
+<p>To <strong>apply the migration</strong>, run the following command:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>php artisan migrate
+</code></pre>
+</div>
+
+<p>Now to <strong>rollback</strong>:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>php artisan migrate:rollback
+</code></pre>
+</div>
+
+<p><strong><a href="https://laravel.com/docs/5.5/migrations">Official reference</a></strong></p>
+
+<p><strong><a href="https://laravel.com/docs/5.5/migrations#creating-columns">Data types</a></strong></p>
+
+<p><strong><a href="https://laravel.com/docs/5.5/migrations#creating-indexes">Primary key</a></strong></p>
+
+<div class="language-php highlighter-rouge"><pre class="highlight"><code>$table-&gt;increments('id');
+</code></pre>
+</div>
+
+<p><strong><a href="https://laravel.com/docs/5.5/migrations#foreign-key-constraints">Foreign keys</a></strong></p>
+
+<h3 id="snippet-for-creating-a-new-table">Snippet for creating a new table</h3>
 
 <div class="language-php highlighter-rouge"><pre class="highlight"><code><span class="cp">&lt;?php</span>
 <span class="k">use</span> <span class="nx">Illuminate\Database\Schema\Blueprint</span><span class="p">;</span>
@@ -130,7 +164,11 @@
 
 <p>Notice how the migration is done in the up function and its counterpart down. Laravel chooses a reasonable name for the index, therefore it has to be used in order to be rolled back. Otherwise, you’ll get an error when trying to undo your last migration.</p>
 
-<p>$table-&gt;timestamps() is responsible for creating two timestamp fields, created_at and updated_at, making it easier to track changes in your data.</p>
+<p>The following line is responsible for creating two timestamp fields, created_at and updated_at, making it easier to track changes in your data.</p>
+
+<div class="language-php highlighter-rouge"><pre class="highlight"><code>$table-&gt;timestamps();
+</code></pre>
+</div>
 
     </div>
   </div>
@@ -155,6 +193,12 @@
         <span class="badge badge-default">back-end</span>
         
         <span class="badge badge-default">technology</span>
+        
+        <span class="badge badge-default">migrations</span>
+        
+        <span class="badge badge-default">sql</span>
+        
+        <span class="badge badge-default">databases</span>
         
       </h5>
     </div>
