@@ -26,3 +26,19 @@ git checkout <branch_where_files_are> -- <file_relative_path>
 ```
 
 I will keep updating this post over time.
+
+### Listing stashes
+
+Lists all available stashes.
+
+```
+git stash list
+```
+
+### Applying specific stashes
+
+Get the stash number from the previous step and replace the n in:
+
+```
+git stash apply stash@{n}
+```
