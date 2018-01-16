@@ -281,7 +281,7 @@ a:hover {
 div > .highlight {
   padding: 10px;
   border-radius: 5px;
-  padding-bottom: 10px; }
+  margin-bottom: 10px; }
 
 pre > .highlight {
-  margin-bottom: 0px; }
+  margin-bottom: 0px !important; }
