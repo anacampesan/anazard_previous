@@ -42,3 +42,35 @@ Get the stash number from the previous step and replace the n in:
 ```
 git stash apply stash@{n}
 ```
+
+### Stashing new files
+
+This flag includes the recently uncommitted files to stashing.
+
+```
+git stash -u
+```
+
+### Fixing .gitignore
+
+This removes all tracked files and adds them back. The -r flag stands for **recursively**.
+
+```
+git rm -r --cached .
+git add .
+git commit -m "Fixed .gitignore"
+```
+
+If there's a specific file or folder you want to fix, this should work as well:
+
+```
+git rm -r --cached <file-or-folder-name>
+```
+
+### Rolling back to specific commits
+
+First, enter **git log** and get the key of the commit you want to rollback to. Then, run the following command:
+
+```
+git reset --hard <commit-rsa>
+```

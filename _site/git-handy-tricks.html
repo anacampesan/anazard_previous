@@ -122,6 +122,38 @@
 </code></pre>
 </div>
 
+<h3 id="stashing-new-files">Stashing new files</h3>
+
+<p>This flag includes the recently uncommitted files to stashing.</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>git stash -u
+</code></pre>
+</div>
+
+<h3 id="fixing-gitignore">Fixing .gitignore</h3>
+
+<p>This removes all tracked files and adds them back. The -r flag stands for <strong>recursively</strong>.</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>git rm -r --cached .
+git add .
+git commit -m "Fixed .gitignore"
+</code></pre>
+</div>
+
+<p>If there’s a specific file or folder you want to fix, this should work as well:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>git rm -r --cached &lt;file-or-folder-name&gt;
+</code></pre>
+</div>
+
+<h3 id="rolling-back-to-specific-commits">Rolling back to specific commits</h3>
+
+<p>First, enter <strong>git log</strong> and get the key of the commit you want to rollback to. Then, run the following command:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>git reset --hard &lt;commit-rsa&gt;
+</code></pre>
+</div>
+
     </div>
   </div>
 
