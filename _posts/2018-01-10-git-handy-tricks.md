@@ -74,3 +74,11 @@ First, enter **git log** and get the key of the commit you want to rollback to. 
 ```
 git reset --hard <commit-rsa>
 ```
+
+### Undoing commits
+
+Did you just commit something that's not 100% correct and would like to keep working on it before the definitive commit? No worries, just undo it using the following command, make the changes and commit it again.
+
+```
+git reset HEAD~
+```
